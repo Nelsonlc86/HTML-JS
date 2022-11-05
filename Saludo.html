@@ -7,14 +7,53 @@
     <title>Document</title>
   </head>
   <body>
-    <section id="contenido">
-    </section>
+    <div>
+      <ul>
+        <li>
+          <a href="www.google.com">
+            <p id="prueba">
+              google
+            </p>
+          </a>
+        </li>
+        <li>
+          <a href="www.yourube.com">
+            <p>
+              youtube
+            </p>
+          </a>
+        </li>
+        <li>
+          <a href="www.spotify.com">
+            <p>
+              spotify
+            </p>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+    <ul>
+      <li id="contenido"></li>
+    </ul>
+    <input type="text" id="texto">
     <button type="button" id="saludo">Saludar</button>
   </body>
   <script>
     document.getElementById("saludo").addEventListener("click", saludar)
     function saludar() {
-      document.getElementById("contenido").innerHTML = "Hola";
+      texto = document.getElementById("texto").value
+      contenido = document.getElementById("contenido").innerHTML
+      console.log('contenido', contenido)
+      if (contenido !== "") {
+        new_li = document.createElement("li")
+        new_li.innerHTML = "Hola " + texto;
+        parent = document.getElementById("contenido").parentElement 
+        parent.appendChild(new_li)
+      } else {
+        document.getElementById("contenido").innerHTML = "Hola " + texto;
+      }
     }
   </script>
 </html>
