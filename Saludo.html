@@ -8,12 +8,13 @@
   </head>
   <body>
     <section id="contenido">
-      <button type="button" onclick="saludar()">Saludar</button>
     </section>
+    <button type="button" id="saludo">Saludar</button>
   </body>
   <script>
+    document.getElementById("saludo").addEventListener("click", saludar)
     function saludar() {
-      document.getElementById("contenido").innerHTML = alert("Hola ");
+      document.getElementById("contenido").innerHTML = "Hola";
     }
   </script>
 </html>
